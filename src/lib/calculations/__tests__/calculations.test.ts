@@ -1,18 +1,11 @@
 import { describe, it, expect } from "vitest";
-import {
-  calculateBalance,
-  roundToPrecision,
-  METALLURGY_EPSILON,
-} from "../balance";
+import { calculateBalance } from "../balance";
 import {
   checkElementSpecification,
   evaluateAlloySpecification,
   type SpecLimit,
 } from "../spec-checker";
-import {
-  validateComposition,
-  ROUNDING_TOLERANCE_PERCENT,
-} from "../composition-validator";
+import { validateComposition } from "../composition-validator";
 
 describe("Balance-Element Calculation Module", () => {
   it("calculates normal decimal solute additions accurately", () => {

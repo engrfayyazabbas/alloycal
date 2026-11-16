@@ -6,13 +6,13 @@ import { z } from "zod";
 export const elementInputSchema = z.object({
   id: z.string().optional(),
   symbol: z
-    .string({ required_error: "Element symbol is required." })
+    .string()
     .trim()
     .min(1, "Chemical symbol cannot be empty.")
     .max(3, "Chemical symbol must be 1 to 3 characters.")
     .regex(/^[A-Z][a-z]?$/, "Invalid chemical symbol format (e.g. Al, Fe, Cu)."),
   percent: z
-    .number({ required_error: "Percentage value is required." })
+    .number()
     .finite("Percentage must be a finite number.")
     .min(0, "Percentage cannot be negative.")
     .max(100, "Percentage cannot exceed 100%."),
